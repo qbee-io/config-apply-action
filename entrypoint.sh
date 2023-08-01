@@ -15,7 +15,7 @@ curl -s -X POST --header "Authorization: Bearer $token" \
   -H "Content-type: application/json" --url "https://${api_host}/api/v2/change" \
   -d "${config_payload}" -w "%{http_code}"
 
-commit_payload=$(jq -rc --arg commit_message "$commit_message" '{"action":"commit","message":$commit_message}')
+commit_payload=$(jq -nrc --arg commit_message "$commit_message" '{"action":"commit","message":$commit_message}')
 curl -s -X POST --header "Authorization: Bearer $token" \
   -H "Content-type: application/json" --url "https://${api_host}/api/v2/commit" \
   -d "${commit_payload}" -w "%{http_code}"

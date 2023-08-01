@@ -17,7 +17,7 @@ inputs:
   commit_message:
     description: 'commit message for the config upload'
     required: false
-    default: 'Commit from GitHub Actions'
+    default: ${{ github.event.head_commit.message }}
   api_host:
     description: 'api host to use'
     required: false

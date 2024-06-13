@@ -2,9 +2,6 @@
 name: 'update qbee device config'
 description: 'upload and commit config to a group or tag in qbee.io'
 inputs:
-  token:
-    description: 'jwt token'
-    required: true
   file_path:
     description: 'filename without path'
     required: true
@@ -18,17 +15,11 @@ inputs:
     description: 'commit message for the config upload'
     required: false
     default: ${{ github.event.head_commit.message }}
-  api_host:
-    description: 'api host to use'
-    required: false
-    default: 'www.app.qbee.io'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.token }}
     - ${{ inputs.file_path }}
     - ${{ inputs.node_id }}
     - ${{ inputs.form_type }}
     - ${{ inputs.commit_message }}
-    - ${{ inputs.api_host }}

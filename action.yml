@@ -15,6 +15,14 @@ inputs:
     description: 'commit message for the config upload'
     required: false
     default: ${{ github.event.head_commit.message }}
+  is_tag:
+    description: 'indicate whether or not the target is a tag'
+    required: false
+    default: '0'
+  template_params:
+    description: 'template parameters you want to expand the config with (gotemplate)'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -23,3 +31,5 @@ runs:
     - ${{ inputs.node_id }}
     - ${{ inputs.form_type }}
     - ${{ inputs.commit_message }}
+    - ${{ inputs.is_tag }}
+    - ${{ inputs.template_params }}

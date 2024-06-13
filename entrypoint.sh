@@ -5,12 +5,12 @@ config_path=$1
 entity_id=$2
 bundle=$3
 commit_message=$4
-template_params=$5
-is_tag=$6
+is_tag=$5
+template_params=$6
 
 TARGET_OPT="--node $entity_id"
 
-if [[ -n "$is_tag" ]]; then
+if [[ $is_tag -gt 0 ]]; then
   TARGET_OPT="--tag $entity_id"
 fi
 

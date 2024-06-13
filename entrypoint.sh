@@ -14,7 +14,12 @@ if [[ $is_tag -gt 0 ]]; then
   TARGET_OPT="--tag $entity_id"
 fi
 
-qbee-cli config save --config $config_path --bundle $bundle $TARGET_OPT
+TEMPLATE_OPT=""
+if [[ -n "$template_params" ]]; then
+  TEMPLATE_OPT="--template-parameters $template_params"
+fi
+
+qbee-cli config save --config $config_path --bundle $bundle $TARGET_OPT $TEMPLATE_OPT
 
 if [[ -n "$commit_message" ]]; then
   qbee-cli config commit --commit-message "$commit_message"

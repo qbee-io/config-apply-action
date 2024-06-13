@@ -10,7 +10,7 @@ is_tag=$6
 
 TARGET_OPT="--node $entity_id"
 
-if [[ -n $is_tag ]]; then
+if [[ -n "$is_tag" ]]; then
   TARGET_OPT="--tag $entity_id"
 fi
 

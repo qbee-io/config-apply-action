@@ -27,7 +27,7 @@ jobs:
           login: ${{ secrets.QBEE_USER }}
           password: ${{ secrets.QBEE_PASSWORD }}
       
-      - name: test config apply
+      - name: test config apply node id
         id: qbee-config-apply
         uses: ./
         with:
@@ -36,7 +36,7 @@ jobs:
           form_type: docker_containers
           commit_message: ${{ github.event.head_commit.message}}
 
-      - name: test config apply
+      - name: test config apply tag
         id: qbee-config-apply-tag
         uses: ./
         with:

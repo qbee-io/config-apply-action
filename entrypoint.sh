@@ -10,7 +10,7 @@ TEMPLATE_OPT=""
 if [ "x$INPUT_TEMPLATE_PARAMS" != "x" ]; then
   TEMPLATE_OPT="--template-parameters $INPUT_TEMPLATE_PARAMS"
 fi
-set -x
+
 qbee-cli config save --config "$INPUT_FILE_PATH" --bundle "$INPUT_FORM_TYPE" $TARGET_OPT $TEMPLATE_OPT
 
 if [ "x$INPUT_COMMIT_MESSAGE" != "x" ]; then

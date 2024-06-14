@@ -41,8 +41,7 @@ jobs:
         uses: ./
         with:
           file_path: docker-containers-template.json
-          node_id: ${{ secrets.QBEE_TAG_NAME}}
           form_type: docker_containers
           commit_message: ${{ github.event.head_commit.message}}
-          is_tag: 1
+          tag_name: ${{ secrets.QBEE_TAG_NAME}}
           template_params: docker_image=alpine:latest,user=my-user,password=my-password

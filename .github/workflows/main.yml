@@ -31,7 +31,7 @@ jobs:
         id: qbee-config-apply
         uses: ./
         with:
-          file_path: docker-containers.json
+          file_path: test/docker-containers.json
           node_id: ${{ secrets.QBEE_NODE_ID }}
           form_type: docker_containers
           commit_message: ${{ github.event.head_commit.message}}
@@ -40,7 +40,7 @@ jobs:
         id: qbee-config-apply-tag
         uses: ./
         with:
-          file_path: docker-containers-template.json
+          file_path: test/docker-containers-template.json
           form_type: docker_containers
           commit_message: ${{ github.event.head_commit.message}}
           tag_name: ${{ secrets.QBEE_TAG_NAME}}

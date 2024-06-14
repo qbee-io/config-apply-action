@@ -7,7 +7,7 @@ inputs:
     required: true
   node_id:
     description: 'id of group to apply config to'
-    required: true
+    required: false
   form_type:
     description: 'form type to upload'
     required: true
@@ -17,7 +17,6 @@ inputs:
   tag_name:
     description: 'indicate whether or not the target is a tag'
     required: false
-    default: '0'
   template_params:
     description: 'template parameters you want to expand the config with (gotemplate)'
     required: false

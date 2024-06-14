@@ -1,26 +1,18 @@
-#!/bin/sh
+#!/bin/sh -l
 
-#inputs
-config_path=$1
-entity_id=$2
-bundle=$3
-commit_message=$4
-is_tag=$5
-template_params=$6
+TARGET_OPT="--node $INPUT_NODE_ID"
 
-TARGET_OPT="--node $entity_id"
-
-if [[ $is_tag -gt 0 ]]; then
-  TARGET_OPT="--tag $entity_id"
+if [ "x$INPUT_TAG_NAME" != "x" ]; then
+  TARGET_OPT="--tag $INPUT_TAG_NAME"
 fi
 
 TEMPLATE_OPT=""
-if [[ -n "$template_params" ]]; then
-  TEMPLATE_OPT="--template-parameters $template_params"
+if [ "x$INPUT_TEMPLATE_PARAMS" != "x" ]; then
+  TEMPLATE_OPT="--template-parameters $INPUT_TEMPLATE_PARAMS"
 fi
 
-qbee-cli config save --config $config_path --bundle $bundle $TARGET_OPT $TEMPLATE_OPT
+qbee-cli config save --config "$INPUT_FILE_PATH" --bundle "$INPUT_FORM_TYPE" $TARGET_OPT $TEMPLATE_OPT
 
-if [[ -n "$commit_message" ]]; then
-  qbee-cli config commit --commit-message "$commit_message"
+if [ "x$INPUT_COMMIT_MESSAGE" != "x" ]; then
+  qbee-cli config commit --commit-message "$INPUT_COMMIT_MESSAGE"
 fi

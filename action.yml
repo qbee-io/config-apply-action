@@ -14,8 +14,7 @@ inputs:
   commit_message:
     description: 'commit message for the config upload'
     required: false
-    default: ${{ github.event.head_commit.message }}
-  is_tag:
+  tag_name:
     description: 'indicate whether or not the target is a tag'
     required: false
     default: '0'
@@ -26,10 +25,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.file_path }}
-    - ${{ inputs.node_id }}
-    - ${{ inputs.form_type }}
-    - ${{ inputs.commit_message }}
-    - ${{ inputs.is_tag }}
-    - ${{ inputs.template_params }}

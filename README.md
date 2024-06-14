@@ -31,12 +31,12 @@ jobs:
     
     - name: config apply and commit for a tag name
       uses: qbee-io/config-apply-action@main
-        with:
-          file_path: test/docker-containers-template.json
-          form_type: docker_containers
-          tag_name: my-tag-name
-          commit_message: ${{ github.event.head_commit.message}}
-          template_params: docker_image=alpine:latest,user=my-user,password=my-password
+      with:
+        file_path: test/docker-containers-template.json
+        form_type: docker_containers
+        tag_name: my-tag-name
+        commit_message: ${{ github.event.head_commit.message}}
+        template_params: docker_image=alpine:latest,user=my-user,password=my-password
 ```
 # Input variables
 * `file_path`: Path to the config json file. Valid json can be exported from the UI for the relevant form_type/bundle

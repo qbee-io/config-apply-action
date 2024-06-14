@@ -22,7 +22,7 @@ jobs:
         run: docker build . --file Dockerfile
 
       - name: Do qbee login
-        uses: qbee-io/authenticate-action@DEV-2145/convert-to-qbee-cli
+        uses: qbee-io/authenticate-action@main
         with:
           login: ${{ secrets.QBEE_USER }}
           password: ${{ secrets.QBEE_PASSWORD }}

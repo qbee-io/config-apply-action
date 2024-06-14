@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "version": "v1",
+  "items": [
+    {
+      "name": "my-test-app",
+      "image": "{{.docker_image}}",
+      "docker_args": "-p 8080:80 -e MY_VAR_1=MY_VALUE_1",
+      "env_file": "",
+      "command": ""
+    }
+  ],
+  "registry_auths": [
+    {
+      "username": "{{.user}}",
+      "password": "{{.password}}"
+    }
+  ]
+}

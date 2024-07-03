@@ -2,8 +2,6 @@
 Upload and commit config to qbee.io within GitHub runners.
 
 # Usage
-
-# Usage
 To use this action make sure to use our [authentication action](https://github.com/qbee-io/authenticate-action) before the file upload.
 
 A sample GitHub action file in your repository would look like this

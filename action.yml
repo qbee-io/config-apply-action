@@ -1,6 +1,8 @@
-# action.yml
-name: 'update qbee device config'
-description: 'upload and commit config to a group or tag in qbee.io'
+name: 'Upload Qbee Config'
+description: 'Upload config to a device, group or tag. Adding an optional commit message will also commit configuration."'
+branding:
+  icon: send
+  color: white
 inputs:
   file_path:
     description: 'filename without path'

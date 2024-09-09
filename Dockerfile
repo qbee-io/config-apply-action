@@ -1,7 +1,7 @@
 # Container image that runs your code
-FROM alpine:3.19.1
-ENV QBEE_CLI_VERSION="v1.2024.24"
-ENV QBEE_CLI_CHECKSUM="555dbc6ca1f4c7ed3dc06c86e0c6bc1fde2931e74b671a269a278add8419fc47"
+FROM alpine:3.19.4
+ENV QBEE_CLI_VERSION="v1.2024.36"
+ENV QBEE_CLI_CHECKSUM="542ea9c87cc5b34243a969efb71cb32a7eb2c1041bad2d10ae49b53466ab3685"
 
 ADD https://github.com/qbee-io/qbee-cli/releases/download/${QBEE_CLI_VERSION}/qbee-cli-${QBEE_CLI_VERSION}.linux-amd64 \
     /usr/local/bin/
